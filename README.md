@@ -29,7 +29,7 @@ After acquiring the installation package, extract the following files:
 7. MQSeriesMan
 
 ### MQ startup script
-This script is a part of Support Pac MSL1.
+This script is a part of Support Pac MSL1 (copy the rpm file to ```/install/mq/autostart/``` directory).
 
 ## Setup
 You need to provide the files:
