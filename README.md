@@ -29,12 +29,12 @@ After acquiring the installation package, extract the following files:
 7. MQSeriesMan
 
 ### MQ startup script
-This script is a part of Support Pac.
+This script is a part of Support Pac MSL1.
 
 ## Setup
 You need to provide the files:
 
-1. MQ setup packages go to ```./install/```
+1. MQ setup packages go to ```./install/mq/```
 1. MQSC configuration scripts go to: ```./mqsc/```
     * Each of the MQSC configuration files should contain a configuration of only one queue manager.
     * A queue manager is going to be created for each MQSC file. The name of the queue manager is going to be taken from the MQSC filename, without the extension (ABC001.mqsc will create a queue manager named ABC001).
