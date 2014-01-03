@@ -59,12 +59,19 @@ SetMqmEnv()
 	echo ". /opt/mqm/bin/setmqenv -s" > /var/mqm/.bashrc && chmod +x /var/mqm/.bashrc
 }
 
+# Changes the mqm user shell:
+ChangeMqmShell()
+{
+	chsh -s /bin/bash mqm
+}
+
 if [ -z $(getent passwd mqm) ]
 then
     showNotice "Installing MQ..."
 	SetLongMode
     InstallMQ
     SetMqmEnv
+    ChangeMqmShell
 else
     showNotice "MQ already installed"
 fi
