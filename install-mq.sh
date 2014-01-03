@@ -62,4 +62,4 @@ else
 fi
 
 # Set MQ environment config:
-. /opt/mqm/bin/setmqenv -s
+echo ". /opt/mqm/bin/setmqenv -s" > /var/mqm/.bashrc && chmod +x /var/mqm/.bashrc
