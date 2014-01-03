@@ -1,0 +1,5 @@
+install/mq/*
+.Xauthority-c
+.bash_history
+.cache
+.vagrant
