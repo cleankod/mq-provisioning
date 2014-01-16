@@ -12,6 +12,7 @@ These provisioning scripts are going to:
 1. Setup all environment for MQ to run.
 1. Import all of the MQSC configuration files and run them, creating queue managers if necessary.
 1. Start queue managers and their objects, required to connect to the queue manager.
+1. Create SSL certificates for each queue manager and copy *.jks to install/certs directory. This file can be used by your Java as both keystore and truststore. The password for the cert is 'ochrona2'.
 
 
 ## Prerequisites
