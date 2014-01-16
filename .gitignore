@@ -1,0 +1,7 @@
+install/mq/*
+.rpmdb/*
+.Xauthority-c
+.bash_history
+.cache
+.vagrant
+.viminfo
