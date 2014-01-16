@@ -43,6 +43,7 @@ InstallMQ()
     rpm -ivh --nodeps --force-debian MQSeriesJava-"$MQ_VERSION"."$installMode".rpm
     rpm -ivh --nodeps --force-debian MQSeriesSamples-"$MQ_VERSION"."$installMode".rpm
     rpm -ivh --nodeps --force-debian MQSeriesMan-"$MQ_VERSION"."$installMode".rpm
+    rpm -ivh --nodeps --force-debian MQSeriesJRE-"$MQ_VERSION"."$installMode".rpm
     rpm -ivh --nodeps --force-debian MQSeriesGSKit-"$MQ_VERSION"."$installMode".rpm
     chown -R mqm:mqm /opt/mqm
     chown -R mqm:mqm /var/mqm
@@ -57,7 +58,7 @@ InstallMQ()
 SetMqmEnv()
 {
 	# Set MQ environment config:
-	echo ". /opt/mqm/bin/setmqenv -s" > /var/mqm/.bashrc && chmod +x /var/mqm/.bashrc
+	echo ". /opt/mqm/bin/setmqenv -s" >> /var/mqm/.bashrc && chmod +x /var/mqm/.bashrc
 }
 
 # Changes the mqm user shell:

@@ -11,7 +11,7 @@ source lib/notices.sh
 echo $MQ_BIN
 
 # Get queue managers list:
-queueManagers=$(cd $MQSC_CONFIG_FILES && ls -1 *.mqsc | sed -e 's/\.[a-zA-Z]*$//')
+queueManagers=$(ls -1 /install/mqsc/*.mqsc | xargs -n1 basename | sed -e 's/\.[a-zA-Z]*$//')
 
 # For each MQSC file, create queue manager and import its configuration:
 for qm in $queueManagers
@@ -33,4 +33,6 @@ do
 	sudo -u mqm -H sh -c "${MQ_BIN}runmqsc $qm < ${MQSC_CONFIG_FILES}${qm}.mqsc > ${MQSC_CONFIG_FILES}${qm}.out"
 	# Start listener:
 	sudo -u mqm -H sh -c "${MQ_BIN}runmqsc $qm" <<< "START LISTENER($qm)"
+	# Create SSL certs:
+	./mq-ssl.sh $qm ochrona2
 done

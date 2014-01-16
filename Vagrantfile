@@ -10,6 +10,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :path => "configure.sh"
   config.vm.provision :shell, :path => "install-prerequisities.sh"
   config.vm.provision :shell, :path => "install-mq.sh"
+  config.vm.provision :shell, :path => "add-users.sh"
   
   ###################################################################
   # Configuration for the mq001 queue manager's virtual machine.
